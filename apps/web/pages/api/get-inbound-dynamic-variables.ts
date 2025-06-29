@@ -10,6 +10,9 @@ import { defaultHandler } from "@calcom/lib/server/defaultHandler";
 import prisma from "@calcom/prisma";
 import { getAvailableSlots } from "@calcom/trpc/server/routers/viewer/slots/util";
 
+// Cloudflare Pages Edge Runtime compatibility
+export const runtime = "edge";
+
 dayjs.extend(advancedFormat);
 
 const schema = z.object({

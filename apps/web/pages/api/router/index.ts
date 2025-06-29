@@ -2,6 +2,9 @@ import { defaultHandler } from "@calcom/lib/server/defaultHandler";
 import { defaultResponder } from "@calcom/lib/server/defaultResponder";
 import { getRoutedUrl } from "@calcom/lib/server/getRoutedUrl";
 
+// Cloudflare Pages Edge Runtime compatibility
+export const runtime = "edge";
+
 export default defaultHandler({
   OPTIONS: Promise.resolve({
     default: defaultResponder(async (req, res) => {

@@ -7,6 +7,9 @@ import getOrgIdFromMemberOrTeamId from "@calcom/lib/getOrgIdFromMemberOrTeamId";
 import { defaultHandler } from "@calcom/lib/server/defaultHandler";
 import prisma from "@calcom/prisma";
 
+// Cloudflare Pages Edge Runtime compatibility
+export const runtime = "edge";
+
 const InputSchema = z.object({
   userId: z
     .string()

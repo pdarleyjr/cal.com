@@ -8,6 +8,9 @@ import { HttpError } from "@calcom/lib/http-error";
 import prisma from "@calcom/prisma";
 import type { AppDeclarativeHandler, AppHandler } from "@calcom/types/AppHandler";
 
+// Cloudflare Pages Edge Runtime compatibility
+export const runtime = "edge";
+
 const defaultIntegrationAddHandler = async ({
   slug,
   supportsMultipleInstalls,

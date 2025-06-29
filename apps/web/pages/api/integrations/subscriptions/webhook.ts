@@ -8,6 +8,9 @@ import { getErrorFromUnknown } from "@calcom/lib/errors";
 import { HttpError as HttpCode } from "@calcom/lib/http-error";
 import prisma from "@calcom/prisma";
 
+// Cloudflare Pages Edge Runtime compatibility
+export const runtime = "edge";
+
 export const config = {
   api: {
     bodyParser: false,

@@ -103,6 +103,13 @@ const informAboutDuplicateTranslations = () => {
 };
 
 informAboutDuplicateTranslations();
+
+// Cloudflare Pages development setup
+if (process.env.NODE_ENV === "development") {
+  const { setupDevPlatform } = require("@cloudflare/next-on-pages/next-dev");
+  setupDevPlatform();
+}
+
 const plugins = [];
 if (process.env.ANALYZE === "true") {
   // only load dependency if env `ANALYZE` was set

@@ -12,6 +12,9 @@ import { CreationSource } from "@calcom/prisma/enums";
 import { userMetadata } from "@calcom/prisma/zod-utils";
 import { inviteMembersWithNoInviterPermissionCheck } from "@calcom/trpc/server/routers/viewer/teams/inviteMember/inviteMember.handler";
 
+// Cloudflare Pages Edge Runtime compatibility
+export const runtime = "edge";
+
 const verifySchema = z.object({
   token: z.string(),
 });

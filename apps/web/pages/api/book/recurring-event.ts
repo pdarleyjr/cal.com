@@ -8,6 +8,9 @@ import getIP from "@calcom/lib/getIP";
 import { checkCfTurnstileToken } from "@calcom/lib/server/checkCfTurnstileToken";
 import { defaultResponder } from "@calcom/lib/server/defaultResponder";
 
+// Cloudflare Pages Edge Runtime compatibility
+export const runtime = "edge";
+
 // @TODO: Didn't look at the contents of this function in order to not break old booking page.
 
 type PlatformParams = {

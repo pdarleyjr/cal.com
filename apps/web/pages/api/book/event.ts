@@ -8,6 +8,9 @@ import { checkCfTurnstileToken } from "@calcom/lib/server/checkCfTurnstileToken"
 import { defaultResponder } from "@calcom/lib/server/defaultResponder";
 import { CreationSource } from "@calcom/prisma/enums";
 
+// Cloudflare Pages Edge Runtime compatibility
+export const runtime = "edge";
+
 async function handler(req: NextApiRequest & { userId?: number }) {
   const userIp = getIP(req);
 
