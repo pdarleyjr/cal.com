@@ -1,0 +1,37 @@
+name = "booksmartly"
+compatibility_date = "2025-06-28"
+compatibility_flags = ["nodejs_compat"]
+
+# Project root for monorepo (Cal.com Next.js app location)
+root = "calcom/apps/web"
+
+# Cloudflare Pages configuration
+pages_build_output_dir = ".vercel/output/static"
+
+# Environment variables
+[env.production.vars]
+NODE_ENV = "production"
+NEXT_PUBLIC_WEBAPP_URL = "https://booksmartly.pages.dev"
+NEXT_PUBLIC_WEBSITE_URL = "https://booksmartly.pages.dev"
+NEXT_PUBLIC_CONSOLE_URL = "https://booksmartly.pages.dev"
+NEXT_PUBLIC_EMBED_LIB_URL = "https://booksmartly.pages.dev/embed/embed.js"
+
+[env.preview.vars]
+NODE_ENV = "production"
+NEXT_PUBLIC_WEBAPP_URL = "https://preview.booksmartly.pages.dev"
+NEXT_PUBLIC_WEBSITE_URL = "https://preview.booksmartly.pages.dev"
+NEXT_PUBLIC_CONSOLE_URL = "https://preview.booksmartly.pages.dev"
+NEXT_PUBLIC_EMBED_LIB_URL = "https://preview.booksmartly.pages.dev/embed/embed.js"
+
+# Hyperdrive configuration for PostgreSQL connection pooling via Supabase
+[[env.production.hyperdrive]]
+binding = "HYPERDRIVE"
+id = "placeholder_hyperdrive_id_will_be_set_during_setup"
+
+[[env.preview.hyperdrive]]
+binding = "HYPERDRIVE"
+id = "placeholder_preview_hyperdrive_id_will_be_set_during_setup"
+
+# Build configuration
+[build]
+command = "yarn build && npx @cloudflare/next-on-pages@1"
